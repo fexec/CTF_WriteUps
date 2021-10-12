@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-The challenge is to decode the md5 hash printed on the page and submit it as quickly as possible.
+The challenge is to decode the md5 hash printed on the page and submit it on the same page as quickly as possible.
 Performing the task manually would be "too slow".
 """
 import requests
