@@ -1,0 +1,20 @@
+#!/usr/bin/python3
+
+import requests
+import re
+import hashlib
+
+url = 'http://139.59.166.56:31851/'
+
+s = requests.Session()
+req = s.get(url)
+
+rg = re.findall("<h3 align='center'>\w*</h3>",req.text)
+rg = re.findall("\w{7,}", rg[0])
+
+hash = hashlib.md5(rg[0].encode('utf-8')).hexdigest()
+data = {"hash" : hash}
+
+post = s.post(url=url, data=data)
+
+print(post.text)
